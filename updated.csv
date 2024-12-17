@@ -1,0 +1,177 @@
+"product_id","name","brand","price","barcode","item_number","quantity_in_stock","description","unit_size","category_id","expiry_date"
+1114,"Trident Peppermint","Trident","1.99","057700225646","24",1000,"","1 pack",26,NULL
+1132,"Glosette Almonds","Glosette","2.99","068000670210","43",1000,"","1 pack",26,NULL
+1151,"M&M's Milk Chocolate","M&M's","0.00","058496812317","66",1000,"","1 bar",26,NULL
+1168,"Pringles Chili and Lime","Pringles","3.99","064100150584","94",1000,"","156 g",26,NULL
+1185,"Planters Salted Cocktail Peanuts","Planters","4.99","058716991662","109",1000,"","200g",26,NULL
+1216,"ObusForme -M","ObusForme","69.99","064845227855","0",10,"","1 brace",26,NULL
+1244,"Health One Weekly Pill Box","Health One","3.99","627980500735","0",2,"","1 box",26,NULL
+1259,"GingerAle","Gingerale","1.99","06224017","99",1000,"","355mL",26,NULL
+1275,"Kolik Drops","Dr Chase Pediatric","14.99","059097002190","180748",1000,"","60mL",26,NULL
+1093,"Fisherman's Friend Cherry","Fisherman's Friend","2.99","01125447","01",1000,"","1 pack",26,NULL
+1115,"Trident Spearmint","Trident","1.99","057700225608","25",1000,"","1 pack",26,NULL
+1133,"Glosette Peanuts","Glosette","2.99","068000670227","44",1000,"","1 pack",26,NULL
+1152,"M&M's Peanut","M&M's","1.99","058496812324","67",1000,"","1 pack",26,NULL
+1186,"NOSH and CO Milk Chocolate Covered Peanuts","Nosh & Co","1.99","771058802334","110",1000,"","70g",26,NULL
+1201,"Professional Orthopaedic OTC Multiple use elastic Binder for Women - 2XL","Professional Orthopaedic","49.99","048503268879","2688",1,"","2688",26,NULL
+1217,"MKO Moist Heat Pad - Neck","MKO","37.99","738435172404","0",1,"","1 brace",26,NULL
+1094,"Fisherman's Friend Honey Lemon","Fisherman's Friend","2.99","01125641","02",1000,"","1 pack",26,NULL
+1116,"Trident Watermelon Twist","Trident","1.99","057700225622","26",1000,"","1 pack",26,NULL
+1134,"Coffee Crisp","Nestle","1.99","059800000215","45",1001,"","1 bar",26,NULL
+1260,"Pepsi","Pepsi","1.99","069000004258","99",1000,"","355mL",26,NULL
+1153,"Mars","Mars","1.99","058496328733","70",1000,"","1 bar",26,NULL
+1170,"Pringles Mexican Street Corn","Pringles","3.99","064100150621","95",1000,"","1 can",26,NULL
+1187,"Nutella & GO","Nutella","2.99","062020050526","111",1000,"","52g",26,NULL
+1202,"RIb Belt - Female","MKO","39.99","610570107339","1389",1,"","1 brace",26,NULL
+1218,"MKO Moist Heat Pad - Small - Neck","MKO","34.99","738435172381","LMS115",2,"","1 pad",26,NULL
+1138,"ButterFinger","Butterfinger","1.99","062020100627","49",1000,"","1 bar",26,NULL
+1157,"Oh Henry","Oh henry","1.99","068000792820","74",1000,"","1 bar",26,NULL
+1169,"Pringles Ketchup","Pringles","3.99","064100118690","95",1000,"","156g",26,NULL
+1101,"5ive Gum Watermelon","5ive","1.99","064900423987","09",1000,"","1 pack",26,NULL
+1140,"Flake","Cadburt","1.99","061200054606","51",1000,"","1 bar",26,NULL
+1112,"Trident Bubblegum","Trident","1.99","057700225707","22",1000,"","1 pack",26,NULL
+1245,"TEVA - Glycerin Suppositories","Teva","7.99","058739743538","62752",6,"","24 TABS",26,NULL
+1095,"Halls Assorted CItrus","Halls","1.99","057700853863","03",2,"","1 pack",26,NULL
+1117,"Trident Tropical Twist","Trident","1.99","057700225660","28",10000,"","1 pack",26,NULL
+1135,"Aero Pepermint","Aero","1.99","059800523110","46",1001,"","1 pack",26,NULL
+1154,"Mars Cookie Dough","Mars","1.99","058496456566","71",1000,"","1 bar",26,NULL
+1171,"Pringles Pizza","Pringles","3.99","064100111431","96",1000,"","156g",26,NULL
+1188,"Twizzlers Twists","Twizzlers","1.99","056600825024","112",1000,"","90g",26,NULL
+1203,"RIb Belt - Male","MKO","39.99","610570107322","1388",1,"","1 brace",26,NULL
+1219,"MKO Pulley Back Brace - XL","MKO","49.99","738435172459","LMS911",1,"Size: XL","1 brace",26,NULL
+1246,"Ez Health Sterile Lancels - Extra gentle","EZ Health","12.99","671004000350","191353",1,"","100 lancets",26,NULL
+1261,"Ensure Plus Can chocolate","Ensure","1.99","055325207023","99",1000,"","235mL",26,NULL
+1276,"AMG Zipper Mattress Protector","AMG","20.99","775757454504","288957",2,"","1 pad",26,NULL
+1096,"Halls Honey","Halls","1.99","057700011973","03",1000,"","1 pack",26,NULL
+1118,"HiChew Strawberry","Hichew","0.00","851681008300","30",1001,"","1 pack",26,NULL
+1136,"Crunch Real Milk Chocolate","Nestle","1.99","059800131803","47",1000,"","1 bar",26,NULL
+1155,"Mirage Chocolate","Mirage
+","1.99","05987538","72",1000,"","1 bar",26,NULL
+1172,"Pringles Sour and Cream","Pringles","3.99","064100111356","97",1000,"","156g",26,NULL
+1189,"Twizzlers Gummies","Twizzlers","1.99","056600809611","113",1000,"","60g",26,NULL
+1204,"Figure 8 Clavicle Strap","Professional Orthopaedic","34.99","048503245429","2454",1,"","1 brace",26,NULL
+1220,"MKO PUlley Back Brace - 3XL","MKO","49.99","738435172473","LMS911",2,"Size: 3XL","1 Brace",26,NULL
+1247,"Ez Health Needles 32G 4mm","EZ Health","27.99","671004000435","157583",3,"","100 needles",26,NULL
+1262,"Glucerna Vanilla Bottle","Glucerna","2.99","055325004073","99",1000,"","237mL",26,NULL
+1277,"Dependend Fresh Protection with tabs Large","Dependend","39.99","036000193176","54392",1000,"","16 pads",26,NULL
+1097,"Halls Honey Lemon","Halls","1.99","057700628805","04",10000,"","1 pack",26,NULL
+1119,"5ive Gum Watermelon","5ive","1.99","064900423987","09",1000,"","1 pack",26,NULL
+1137,"Aero","Nestle","1.99","059800000116","48",1000,"","1 bar",26,NULL
+1156,"Mr.Big","Cadburt","1.99","06134521","73",1000,"","1 bar",26,NULL
+1173,"Pringles Ranch","Pringles","3.99","064100146204","98",1000,"","156g",26,NULL
+1190,"Turtles Classic","Nestle","1.29","059800751841","114",1000,"","33g",26,NULL
+1205,"Champion Professional neoprene Shoulder Support - Small","Champion","99.99","048503032722","0327",1,"","1 brace",26,NULL
+1221,"MKO Pulley Back Brace - M","MKO","49.99","738435172435","LMS911",2,"","1 brace",26,NULL
+1248,"Ez Health Needles 32G 6mm","EZ Health","27.99","671004000510","157655",3,"","100 needles",26,NULL
+1263,"Ensure High Protein Chocolate","Ensure","2.99","055325004295","99",101,"","237mL",26,NULL
+1098,"Halls Black Cherry","Halls","1.99","057700229958","05",1000,"","1 pack",26,NULL
+1099,"Halls Menthol Extra Strength","Halls","1.99","057700628034","06",1000,"","1 pack",26,NULL
+1120,"HiChew Green Apple","HiChew","0.00","851681008317","31",1002,"","1 pack",26,NULL
+1174,"Pringles Original Small","Pringles","1.99","064100852617","99",1000,"","67g",26,NULL
+1191,"Reese's Pieces","Reese's","1.00","056600793705","115",1000,"","51g",26,NULL
+1222,"MKO Pulley Back Brace - L","MKO","49.99","738435172442","LMS911",2,"Size: Large","1 brace",26,NULL
+1264,"ENSURE PLUS CALORIES BOTTLE Strawberry","Ensure","2.99","055325007524","99",1000,"","237mL",26,NULL
+1278,"Tena Men Absorbent Guard","Tena","23.99","768702506007","69357",1000,"","20 pads",26,NULL
+1100,"Halls Menthol","Halls","0.00","057700627006","08",1000,"","1 pack",26,NULL
+1139,"Dairy Milk Fruit & Nut","Cadbury","0.00","061200084436","50",1000,"","1 bar",26,NULL
+1121,"HiChew Mango","HiChew","0.00","851681008324","33",1002,"","1 pack",26,NULL
+1102,"5ive Gum Spearmint","5ive","1.99","064900408380","10",1000,"","1 pack",26,NULL
+1122,"HiChew Grape","HiChew","0.00","851681008850","34",1000,"","1 pack",26,NULL
+1141,"Dairy Milk Milk Chocolate","Cadbury","0.00","061200084450","53",1000,"","1 bar",26,NULL
+1158,"Oh Henry Peanut Butter","Oh henry","1.99","068000792837","76",1000,"","1 bar",26,NULL
+1175,"POP chips BBQ","POP","4.99","082666712220","100",1000,"","142g",26,NULL
+1192,"Hershey's Kisses","Hershey's","4.99","056600393981","117",1000,"","78g",26,NULL
+1206,"Champion Professional Quality Industrial Belt - Medium","Champion","89.99","060553405080","0",3,"","1 support",26,NULL
+1223,"La ROche Posay Anthelios XL 60 FPS","La ROCHE-POSAY","33.99","3337875586115","172717",2,"","50ml",26,NULL
+1249,"One a Day Women 50+","Bayer","19.99","056500372802","176488",5,"","90 tabs",26,NULL
+1265,"Glucerna Strawberry Bottle","Glucerna","2.99","055325004097","99",1000,"","237mL",26,NULL
+1103,"5ive Sour Strawberry","5ive","1.99","064900429170","11",1000,"","1 pack",26,NULL
+1123,"Mentos Mint","Mentos","1.99","073390000110","34",1000,"","1 pack",26,NULL
+1142,"Hershey COokies and Creme","Hershey's","1.99","06811307","54",1000,"","1 bar",26,NULL
+1159,"Skittles","Skittles","0.00","058496829605","75",1000,"","1 pack",26,NULL
+1176,"POP chips Sea Salt","POP","4.99","082666712213","101",1000,"","142g",26,NULL
+1193,"KIND Nuts CHerry and Dark Chocolate","KIND","1.99","602652170713","118",1000,"","40g",26,NULL
+1207,"Professional Orthopaedic OTC Elastic Rib Belt Men - Large","Professional Orthopaedic","39.99","048503245955","2459",1,"","1 brace",26,NULL
+1250,"Advil Extra Strong liquid gels24 caps","Advil","17.99","062107005029","209247",2,"","24 caps",26,NULL
+1266,"Nestle Isosource Fibre","Nestle","1.99","043900187709","99",1000,"","250mL",26,NULL
+1104,"5ive Peppermint","5ive","0.00","064900408403","11",10000,"","1 pack",26,NULL
+1124,"Mentos Grape","Mentos","1.99","073390014988","35",1000,"","1 pack",26,NULL
+1143,"Hershey's Whole Almonds","Hershey's","1.99","05663038","55",1000,"","1 bar",26,NULL
+1160,"Skittles Sour","Skittles","0.00","058496894917","77",1000,"","1 pack",26,NULL
+1177,"POP CHips","POP","4.99","082666712244","102",1000,"","142g",26,NULL
+1194,"KIND Fuel Dark Chocolate Nut","KIND","1.99","602652207082","119",1000,"","1 bar",26,NULL
+1208,"Professional Orthopaedic OTC Elastic Rib Belt - XLarge","Professional Orthopaedic","44.99","048503265960","2659",1,"","1 brace",26,NULL
+1224,"CeraVe Hydrating Cleanser","CeraVe","16.99","3606000552913","191223",2,"","237mL",26,NULL
+1251,"Unisom Extra Strength Sleeping Tabs 50mg","Unisom","8.99","628791004269","0",1,"","20 tabs",26,NULL
+1267,"Perrier France FOREVER Lemon","Perrier","2.99","055000209724","99",100,"","500mL",26,NULL
+1105,"Dentyne Ice Spearmin","Dentype","1.99","057700329436","12",1000,"","1 pACK",26,NULL
+1125,"Mentos Fruit","Mentos","1.99","073390000165","36",1000,"","1 Pack",26,NULL
+1144,"Crunchies","Cadbury","1.99","061200225952","56",1000,"","1 bar",26,NULL
+1161,"Smarties Small","Nestle","1.49","05986034","78",1000,"","45g",26,NULL
+1178,"NOSH and CO Regular Chip","NOSH & CO","3.99","771058800453","103",1000,"","130g",26,NULL
+1195,"KIND Nuts Sea Salt and Dark Chocolate","KIND","1.99","602652170751","119",1000,"","1 bar",26,NULL
+1209,"Professional Orthopaedic OTC Elastic Rib Belt Men - XLarge","Professional Orthopaedic","39.99","048503245962","2459",1,"","1 brace",26,NULL
+1252,"Bayer One a day Men","Bayer","19.99","056500372796","176486",2,"","90 tabs",26,NULL
+1268,"Perrier Original","Perrier","2.99","074780000703","99",1000,"","500mL",26,NULL
+1106,"Dentyne Ice Arctic Bubble","Dentyne","1.99","057700012178","14",1000,"","1 pack",26,NULL
+1126,"Tic Tac Fresh Mint","TicTac","0.00","062020025616","37",1000,"","1 pack",26,NULL
+1145,"Neilson Jersey Milk","Neilson","1.99","061200013825","57",1000,"","1 bar",26,NULL
+1162,"Snickers","Snickers","0.00","058496422394","78",1000,"","1 bar",26,NULL
+1179,"NOSH and CO Sour Cream and Onion Rings","NOSH & CO","4.99","771058802396","104",1000,"","130g",26,NULL
+1196,"Mini Eggs","Cadbury","1.99","061200016420","120",1000,"","90g",26,NULL
+1210,"Champion Professional QUality Lightweight industrial Belt","Champion","89.99","048503020835","0208",1,"","1 brace",26,NULL
+1225,"Jamieson 100% pure Vitamin E oil","Jamieson","17.99","064642053060","726513",2,"","28mL",26,NULL
+1253,"Coke Zero","Coke","1.99","06731906","99",1000,"","355mL",26,NULL
+1269,"San Pellegrino Natural Aranciata","San Pellegrino","2.99","055000201445","99",1000,"checkthis","330mL",26,NULL
+1107,"Dentyne Ice PepperMint","Dentyne","1.99","057700329375","16",1000,"","1 Pack",26,NULL
+1127,"Tic Tac Tropical Adventure","Tic Tac","0.00","062020005854","38",1000,"","1 Pack",26,NULL
+1146,"Beuno","Kinder","2.99","062020000682","57",1000,"","1 bar",26,NULL
+1163,"Twix","Twix","1.99","058496352776","79",1000,"","1 bar",26,NULL
+1180,"NOSH & CO Cheese Crunchies","NOSH & CO","3.99","771058802273","105",1000,"","130g",26,NULL
+1197,"M&m mini's","M&M","1.00","058496890131","121",1001,"","30g",26,NULL
+1211,"Champion Professional Quality Lightweight Industrial Belt","Champion","89.99","048503020859","0208",1,"","1 brace",26,NULL
+1254,"Coke Diet","Coke","1.99","06792800","99",1000,"","355mL",26,NULL
+1270,"Thristy Buddha Watermelon","Thirsty Buddgha","2.99","852953001357","99",1000,"","320mL",26,NULL
+1108,"Excel BubbleMint","Excel","1.99","064900428500","18",1000,"","1 Pack",26,NULL
+1128,"Tic Tac Strawberry and Cream","Tic Tac","0.00","062020006035","39",1000,"","1 Pack",26,NULL
+1147,"Beuno White","Kinder","2.99","062020000705","58",1000,"","1 bar",26,NULL
+1164,"Skittles Tropical","Skittles","0.00","058496829636","80",1000,"","1 pack",26,NULL
+1181,"NOSH and CO Dill Pickle Chip","NOSH & CO","3.99","771058803386","106",1000,"","130g",26,NULL
+1212,"Champion Professional QUality Lightweight industrial Belt - Small","Championq","89.99","060553405097","0208",1,"","1 brace",26,NULL
+1226,"MKO Immobilizer - Small","MKO","24.99","738435170288","LM0192",1,"","1 brace",26,NULL
+1240,"Pedialyte Electrolyte Powder Sticks, Oral Rehydration Solution - Fruit Punch","Pedialyte","15.99","055325001492","114146",1,"","8 x 8.5g sticks",26,NULL
+1255,"Coke","Coke","1.99","06782900","99",1000,"","355mL",26,NULL
+1271,"Thirsty Buddha Pineapple","Thirsty Buddha","2.99","852953001654","99",1000,"","320mL",26,NULL
+1109,"Excel White Bubble Mint","Excel","1.99","064900409554","19",1000,"","1 Pack",26,NULL
+1129,"Tic Tac Orange","Tic Tac","0.00","062020005625","40",1000,"","1 pack",26,NULL
+1148,"Kit Kat","Nestle","1.99","05980331","60",1000,"","1 bar",26,NULL
+1165,"Pringles All Dressed","Pringles","3.99","064100147973","90",1000,"s","156g",26,NULL
+1182,"Nosh And CO Cheddar and Sour Cream","NOSH & CO","3.99","771058803980","107",1000,"","130g",26,NULL
+1198,"LumboSacral Support 7"" Elastic - Large","Professional Orthopaedic","65.99","048503489151","2891",1,"Size: large","1 brace",26,NULL
+1213,"Champion Professional Quality Industrial Belt - 2L","Championn","89.99","060553405110","0208",1,"","1 brace",26,NULL
+1227,"MKO Immobilizer - Medium","MKO","24.99","738435170295","LM0192",1,"","1 brace",26,NULL
+1241,"Cepacol Value Pack","Cepacol","12.99","363824903729","64180",3,"","36 lozenges",26,NULL
+1256,"7Up","7UP","1.99","06541432","99",1000,"","355mL",26,NULL
+1272,"Thristy Buddha Coconut Water","Thirsty Buddha","3.99","852953001418","99",1000,"","490mL",26,NULL
+1110,"Excel PepperMint","Excel","1.99","064900000324","20",1000,"","1 pack",26,NULL
+1130,"Junior Caramel","Junior","0.00","062851764050","41",1000,"","1 pack",26,NULL
+1149,"Kit Kat Dark","Nestle","1.99","059800747554","61",1000,"","1 bar",26,NULL
+1166,"Pringles BBQ","Pringles","3.99","064100111370","91",1000,"","1 bar",26,NULL
+1183,"Nosh And CO All Dressed","Nosh & Co","3.99","771058804000","108",1000,"","130g",26,NULL
+1214,"ObusForme - XXL","ObusForme","69.99","064845231425","0",10,"","1 brace",26,NULL
+1228,"MKO Immobilizer - Large","MKO","24.99","738435170301","LM0192",2,"","1 brace",26,NULL
+1242,"HEME BOOST - Iron Supplement","Pharmaris","49.99","628110761514","0",1,"","60 tabs",26,NULL
+1257,"Fanta Orange","Fanta","1.99","067000011559","99",1000,"","355mL",26,NULL
+1273,"Aquafina 500mL","Aquafina","1.99","069000061008","99",1000,"","500mL",26,NULL
+1111,"Excel White Spearmint","Excel","0.00","064900409561","21",1000,"","1 pack",26,NULL
+1113,"Trident Freshmint","Trident","1.99","057700225684","23",1000,"","1 pack",26,NULL
+1131,"Glosette Raisins","Glosettes","2.99","068000670234","42",1000,"","1 pack",26,NULL
+1150,"Kit Kat Chunky Drumstick","Nestle","1.99","059800745260","63",1000,"","1 bar",26,NULL
+1167,"Pringles Cheddar","Pringles","3.99","064100111394","92",1000,"","1 bar",26,NULL
+1184,"Planters Ranch","Planters","4.99","058716978427","109",1000,"","145g",26,NULL
+1200,"Professional Orthopaedic OTC Multiple use elastic Binder for Women - Small","Professional Orthopaedic","49.99","048503268824","2688",1000,"","1 brace",26,NULL
+1215,"ObusForme - S","ObusForme","69.99","064845227817","0",10,"men","1 brace",26,NULL
+1229,"MKO Immobilizer - XSmall","MKO","24.99","738435170271","LM0192",1,"","1 brace",26,NULL
+1243,"One a Day women","Bayer","18.99","056500372789","176485",4,"","90 tabs",26,NULL
+1258,"Fanta Pineapple","Fanta","1.99","067000011061","99",1000,"","355mL",26,NULL
+1274,"Vagisil Extra Strength","Vagisil","8.99","011509014108","709592",2,"","30g",26,NULL
