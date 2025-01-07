@@ -2,137 +2,116 @@
 {% load static %}
 {% block content %}
 <div class="container mt-4">
-    <!-- Flex container for main content and instructions -->
-    <div style="display: flex; gap: 20px;">
-        <!-- Main Content -->
-        <div style="flex: 1; padding-right: 20px;">
-            <div class="p-4 rounded">
+<div style="display: flex; gap: 20px;">
+    <div style="flex: 1; padding-right: 20px;">
+        <div class="p-4 rounded">
 
-                {% if messages %}
-                <div class="alert alert-warning text-sm">
-                    {% for message in messages %}
-                        <p>{{ message }}</p>
-                    {% endfor %}
-                </div>
-                {% endif %}
-
-                <!-- Add New Product Button -->
-                <form method="get" action="{% url 'new_product' %}" class="mt-3">
-                    <input type="hidden" name="next" value="{{ request.path }}">
-                    <button type="submit" class="btn btn-primary">Add New Product</button>
-                </form>
-
-                <h2 class="mt-4">Order {{ order.order_id }}</h2>
-
-                <!-- Barcode Form -->
-                <form id="barcodeForm" method="post" class="mb-4" action="{% url 'create_order' %}">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="barcode">Scan or Enter Barcode:</label>
-                        <input type="text" id="barcode" name="barcode" class="form-control" required autofocus>
-                        <input type="hidden" id="quantity" name="quantity" value="1">
-                    </div>
-                </form>
-
-                <!-- Submit Order -->
-                <form method="post" action="{% url 'submit_order' %}">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-success">
-                        <strong>Click</strong> when Finished Order
-                    </button>
-                </form>
-
-                <!-- Current Order Details -->
-                <h3 class="mt-4" id="orderDetails">Current Order Details</h3>
-                <ul class="list-group mb-4">
-                    {% for detail in order_details %}
-                        <li class="list-group-item">
-                            <div>
-                                <strong>{{ detail.quantity }} x</strong> 
-                                <span class="text-dark font-weight-bold" style="font-size: 20px;">
-                                    {{ detail.product.name }}
-                                </span>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <strong style="font-size: 28px; font-weight: bold;">Price:</strong> 
-                                        <span style="font-size: 28px; font-weight: bold; color: #000;">
-                                            ${{ detail.product.price|floatformat:2 }}
-                                        </span>
-                                    </li>
-                                    <li><strong>Barcode:</strong> {{ detail.product.barcode }}</li>
-                                    <li><strong>Quantity Left:</strong> {{ detail.product.quantity_in_stock }}</li>
-                                    <li><strong>Item Number:</strong> {{ detail.product.item_number }}</li>
-                                </ul>
-                            </div>
-                            <!-- Aligned Flex Container -->
-                            <div class="flex-container" style="gap: 10px; align-items: center;">
-                                <!-- Quantity Input -->
-                                <form method="post" action="{% url 'update_order_item' detail.od_id %}" style="display: flex; align-items: center; gap: 5px;">
-                                    {% csrf_token %}
-                                    <input type="number" name="quantity" class="form-control" 
-                                    value="{{ detail.quantity }}" min="1" 
-                                    style="width: 60px; height: 38px; margin-right: 5px;">
-                             
-                                    <button type="submit" class="btn btn-primary" style="height: 38px; display: flex; align-items: center; justify-content: center;">
-                                        Update
-                                    </button>
-                                </form>
-
-                                <!-- Delete Button -->
-                                <form method="post" action="{% url 'delete_order_item' detail.od_id %}">
-                                    {% csrf_token %}
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-                            </div>
-                        </li>
-                    {% endfor %}
-                </ul>
+            {% if messages %}
+            <div class="alert alert-warning text-sm">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
             </div>
+            {% endif %}
+
+            <form method="get" action="{% url 'new_product' %}" class="mt-3">
+                <input type="hidden" name="next" value="{{ request.path }}">
+                <button type="submit" class="btn btn-primary">Add New Product</button>
+            </form>
+
+            <h2 class="mt-4">Order {{ order.order_id }}</h2>
+
+            <form id="barcodeForm" method="post" class="mb-4" action="{% url 'create_order' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="barcode">Scan or Enter Barcode:</label>
+                    <input type="text" id="barcode" name="barcode" class="form-control" required autofocus>
+                    <input type="hidden" id="quantity" name="quantity" value="1">
+                </div>
+            </form>
+
+            <form method="post" action="{% url 'submit_order' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success">
+                    <strong>Click</strong> when Finished Order
+                </button>
+            </form>
+
+            <h3 class="mt-4" id="orderDetails">Current Order Details</h3>
+            <ul class="list-group mb-4">
+                {% for detail in order_details %}
+                    <li class="list-group-item">
+                        <div>
+                            <strong>{{ detail.quantity }} x</strong> 
+                            <span class="text-dark font-weight-bold" style="font-size: 20px;">
+                                {{ detail.product.name }}
+                            </span>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <strong style="font-size: 28px; font-weight: bold;">Price:</strong> 
+                                    <span style="font-size: 28px; font-weight: bold; color: #000;">
+                                        ${{ detail.product.price|floatformat:2 }}
+                                    </span>
+                                </li>
+                                <li><strong>Barcode:</strong> {{ detail.product.barcode }}</li>
+                                <li><strong>Quantity Left:</strong> {{ detail.product.quantity_in_stock }}</li>
+                                <li><strong>Item Number:</strong> {{ detail.product.item_number }}</li>
+                            </ul>
+                        </div>
+                        <div class="button-container" style="display: flex; gap: 10px; align-items: center;">
+                            <form method="post" action="{% url 'update_order_item' detail.od_id %}" style="display: flex; align-items: center; gap: 5px;">
+                                {% csrf_token %}
+                                <input type="number" name="quantity" class="input-quantity" value="{{ detail.quantity }}" min="1">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </form>
+
+                            <form method="post" action="{% url 'delete_order_item' detail.od_id %}" style="display: flex; align-items: center;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </div>
+</div>
 
-
-
-<!-- JavaScript to handle barcode input focus, auto-enter, and form submission -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const barcodeInput = document.getElementById('barcode');
-        const form = document.getElementById('barcodeForm');
-        let debounceTimeout = null; // Timeout variable for debouncing
-        const debounceDelay = 300; // Delay in milliseconds (adjust based on scanner speed)
+document.addEventListener('DOMContentLoaded', function () {
+    const barcodeInput = document.getElementById('barcode');
+    const form = document.getElementById('barcodeForm');
+    let debounceTimeout = null;
+    const debounceDelay = 300;
 
-        // Focus on the barcode input field on page load
-        barcodeInput.focus();
-        barcodeInput.value = ''; // Clear input field on page load
+    barcodeInput.focus();
+    barcodeInput.value = '';
 
-        // Auto-submit the form when a barcode is entered
-        barcodeInput.addEventListener('input', function () {
-            clearTimeout(debounceTimeout); // Clear any previous timeout
-            debounceTimeout = setTimeout(function () {
-                if (barcodeInput.value.trim() !== '') {
-                    form.submit(); // Submit the form after debounce delay
-                }
-            }, debounceDelay);
-        });
-
-        // Handle Enter key (fallback for scanners that send Enter key)
-        barcodeInput.addEventListener('keypress', function (event) {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                if (barcodeInput.value.trim() !== '') {
-                    form.submit(); // Submit immediately
-                }
+    barcodeInput.addEventListener('input', function () {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(function () {
+            if (barcodeInput.value.trim() !== '') {
+                form.submit();
             }
-        });
-
-        // Reset the input and refocus after form submission
-        form.addEventListener('submit', function () {
-            setTimeout(function () {
-                barcodeInput.value = ''; // Clear the input field
-                barcodeInput.focus(); // Refocus for the next scan
-            }, 200); // Adjust delay as needed
-        });
+        }, debounceDelay);
     });
+
+    barcodeInput.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            if (barcodeInput.value.trim() !== '') {
+                form.submit();
+            }
+        }
+    });
+
+    form.addEventListener('submit', function () {
+        setTimeout(function () {
+            barcodeInput.value = '';
+            barcodeInput.focus();
+        }, 200);
+    });
+});
 </script>
 {% endblock %}

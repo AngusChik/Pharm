@@ -16,7 +16,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import UserPassesTestMixin
-from datetime import datetime
+from datetime import timedelta, date
 from django.http import HttpResponseRedirect  # To handle redirection to the referrer
 from django.db import IntegrityError  # To handle IntegrityError
 import time
@@ -201,7 +201,7 @@ class UpdateOrderItemView(LoginRequiredMixin, View):
             order_detail.price = product.price  # Ensure the price remains the unit price
             order_detail.save()
 
-            # Recalculate the total price for the order
+            # Recalculate the total price for the order 
             order = order_detail.order
             order.total_price = sum(
                 detail.product.price * detail.quantity for detail in order.details.all()
@@ -300,7 +300,7 @@ class OrderSuccessView(View):
 def delete_one(request, product_id):
     if request.method == "POST":
         product = get_object_or_404(Product, pk=product_id)
-        
+
         # Check if there is stock to subtract
         if product.quantity_in_stock > 0:
             product.quantity_in_stock -= 1
@@ -309,7 +309,9 @@ def delete_one(request, product_id):
         else:
             messages.error(request, f"Cannot subtract. {product.name} is already out of stock.")
 
-    # Redirect back to the check-in page
+        # Pass the product details back to the template
+        return render(request, 'checkin.html', {'product': product})
+
     return redirect('checkin')  # Replace 'checkin' with the actual name of your check-in view
 
 #checkin views
@@ -335,7 +337,7 @@ class CheckinProductView(LoginRequiredMixin, View):
 
             except Product.DoesNotExist:
                 messages.error(request, "Product does not exist. Please add the product first.")
-                return redirect('new_product')
+                return redirect('checkin')
         else:
             messages.error(request, "No barcode provided.")
 
@@ -345,17 +347,20 @@ class AddQuantityView(LoginRequiredMixin, View):
     def post(self, request, product_id):
         product = get_object_or_404(Product, product_id=product_id)
         quantity_to_add = int(request.POST.get('quantity_to_add', 1))
-        
+
         if quantity_to_add < 1:
             messages.error(request, "Quantity to add must be at least 1.")
-            return redirect('checkin')
+            return render(request, 'checkin.html', {'product': product})
 
         # Update the product stock
         product.quantity_in_stock += quantity_to_add
         product.save()
 
         messages.success(request, f"{quantity_to_add} unit(s) of {product.name} added to stock.")
-        return redirect('checkin')
+        
+        # Pass the product details back to the template
+        return render(request, 'checkin.html', {'product': product})
+
 
 # Display all orders
 class OrderView(AdminRequiredMixin, View):
@@ -438,15 +443,23 @@ class InventoryView(LoginRequiredMixin, View):
         selected_category_id = request.GET.get('category_id', '')
         barcode_query = request.GET.get('barcode_query', '')
         name_query = request.GET.get('name_query', '')
+        sort_column = request.GET.get('sort', 'name')  # Default sorting column
+        sort_direction = request.GET.get('direction', 'asc')  # Default sorting direction
 
         # Query products based on filters
-        products = Product.objects.all().order_by('-name')  # Assuming `id` is the primary key
+        products = Product.objects.all()
         if selected_category_id:
             products = products.filter(category_id=selected_category_id)
         if barcode_query:
             products = products.filter(barcode__icontains=barcode_query)
         if name_query:
             products = products.filter(name__icontains=name_query)
+
+        # Apply sorting
+        if sort_direction == 'desc':
+            products = products.order_by(f'-{sort_column}')
+        else:
+            products = products.order_by(sort_column)
 
         # Paginate the filtered products
         paginator = Paginator(products, 100)  # Show 100 items per page
@@ -460,7 +473,39 @@ class InventoryView(LoginRequiredMixin, View):
             'selected_category_id': selected_category_id,
             'barcode_query': barcode_query,
             'name_query': name_query,
+            'sort_column': sort_column,
+            'sort_direction': sort_direction,
         })
+    
+class ExpiredProductView(LoginRequiredMixin, View):
+    template_name = 'expired_products.html'
+
+    def get(self, request):
+        # Get the filter range from the query parameters
+        date_filter = request.GET.get('date_filter', '')
+
+        # Get today's date
+        today = date.today()
+
+        # Initialize the filtered products queryset
+        products = Product.objects.filter(expiry_date__lt=today)  # Start by pulling expired products
+
+        # Apply the date filter for upcoming expirations
+        if date_filter == '1_week':
+            products = products | Product.objects.filter(expiry_date__range=(today, today + timedelta(weeks=1)))
+        elif date_filter == '1_month':
+            products = products | Product.objects.filter(expiry_date__range=(today, today + timedelta(weeks=4)))
+        elif date_filter == '2_months':
+            products = products | Product.objects.filter(expiry_date__range=(today, today + timedelta(weeks=8)))
+        elif date_filter == '3_months':
+            products = products | Product.objects.filter(expiry_date__range=(today, today + timedelta(weeks=12)))
+
+        # Render the template with the filtered products
+        return render(request, self.template_name, {
+            'products': products.distinct(),  # Avoid duplicates if a product falls into multiple ranges
+            'date_filter': date_filter,
+        })
+
 
 
 # Edit an existing product

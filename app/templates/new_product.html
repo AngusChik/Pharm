@@ -4,52 +4,7 @@
 
 {% block content %}
 <h1 style="text-align: center; margin-bottom: 20px;">Add New Product</h1>
-
-<style>
-    form {
-        max-width: 600px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: 8px; /* Minimized space between input fields */
-    }
-
-    label {
-        font-weight: bold;
-        margin-bottom: 2px; /* Reduce label spacing */
-    }
-
-    input, textarea, select, button {
-        padding: 8px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 14px;
-    }
-
-    button {
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-        margin-top: 10px;
-    }
-
-    button:hover {
-        background-color: #45a049;
-    }
-
-    #autofillButton {
-        background-color: #007bff;
-        color: white;
-        margin-bottom: 15px; /* Space above the form */
-    }
-
-    #autofillButton:hover {
-        background-color: #0056b3;
-    }
-</style>
-
+    
 {% if messages %}
    <div class="alert-container">
        {% for message in messages %}
@@ -113,6 +68,11 @@
     </div>
 
     <div>
+        <label for="expiry_date">Expiry Date:</label>
+        <input type="date" id="expiry_date" name="expiry_date">
+    </div>
+
+    <div>
         <label for="unit_size">Unit Size:</label>
         <input type="text" id="unit_size" name="unit_size" required>
     </div>
@@ -138,6 +98,7 @@
         }
         
         document.getElementById('unit_size').value = "500ml";
+        document.getElementById('expiry_date').value = new Date().toISOString().split('T')[0]; // Today's date
     });
 </script>
 

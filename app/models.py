@@ -20,20 +20,21 @@ class Category(models.Model):
        return self.name
 
 
-#Inventory
+# Inventory
 class Product(models.Model):
-   product_id = models.AutoField(primary_key=True)  # Explicit primary key
-   name = models.CharField(max_length=200)
-   brand = models.CharField(max_length=100)  # Renamed field
-   item_number = models.CharField(max_length=50, blank=True)
-   price = models.DecimalField(max_digits=10, decimal_places=2)
-   barcode = models.CharField(max_length=30)
-   quantity_in_stock = models.IntegerField(blank=True)  # Renamed field
-   category = models.ForeignKey(Category, on_delete=models.CASCADE)  # Changed from ForeignKey to CharField
-   unit_size = models.CharField(max_length=50, blank=True)  # Unit Size field
-   description = models.TextField(blank=True)  # Description field
+    product_id = models.AutoField(primary_key=True)  # Explicit primary key
+    name = models.CharField(max_length=200)
+    brand = models.CharField(max_length=100)  # Renamed field
+    item_number = models.CharField(max_length=50, blank=True)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    barcode = models.CharField(max_length=30)
+    quantity_in_stock = models.IntegerField(blank=True)  # Renamed field
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)  # ForeignKey field
+    unit_size = models.CharField(max_length=50, blank=True)  # Unit Size field
+    description = models.TextField(blank=True)  # Description field
+    expiry_date = models.DateField(null=True, blank=True)  # Expiry Date field
 
-   def __str__(self):
+    def __str__(self):
        return self.name
    
 ### Purchase - Update inventory

@@ -6,7 +6,7 @@ from app.views import (
    LowStockView, CreateOrderView, OrderView, SubmitOrderView, delete_item,
    delete_order_item, ItemListView, DeleteRecentlyPurchasedProductView,
    DeleteAllOrdersView, DeleteAllRecentlyPurchasedView, signup, CustomLoginView, delete_one,
-   UpdateOrderItemView, AddQuantityView
+   UpdateOrderItemView, AddQuantityView, ExpiredProductView
 )
 
 
@@ -23,6 +23,8 @@ urlpatterns = [
    # Default route
    path('', CustomLoginView.as_view(template_name='login.html'), name='home'),
 
+   #Expired
+   path('expired-products/', ExpiredProductView.as_view(), name='expired_products'),
 
    # Orders
    path('order/update-item/<int:item_id>/', UpdateOrderItemView.as_view(), name='update_order_item'),

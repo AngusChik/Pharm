@@ -14,6 +14,7 @@ class EditProductForm(forms.ModelForm):
             'description',
             'category',
             'unit_size',
+            'expiry_date'
         ]
         
 class AddProductForm(forms.ModelForm):
@@ -28,7 +29,8 @@ class AddProductForm(forms.ModelForm):
             'quantity_in_stock', 
             'description', 
             'category', 
-            'unit_size'
+            'unit_size',
+            'expiry_date'
         ]
 
     # Optional: Add custom validation or widget settings if needed
@@ -43,6 +45,8 @@ class AddProductForm(forms.ModelForm):
         self.fields['quantity_in_stock'].widget.attrs.update({'placeholder': 'Enter quantity'})
         self.fields['description'].widget.attrs.update({'placeholder': 'Enter description'})
         self.fields['unit_size'].widget.attrs.update({'placeholder': 'Enter unit size'})
+        self.fields['expiry_date'].widget.attrs.update({'placeholder': 'Enter expiry date'})
+
 
 
 class OrderDetailForm(forms.ModelForm):

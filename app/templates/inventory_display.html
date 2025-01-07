@@ -118,16 +118,29 @@
 <table>
     <thead>
         <tr>
-            <th>Barcode</th>
-            <th>Product Number</th>
-            <th>Brand</th>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Price</th>
+            <th>
+                Barcode
+            </th>
+            <th>
+                Product Number
+            </th>
+            <th>
+                Brand
+            </th>
+            <th>
+                Product
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Price
+            </th>
             <th>Edit</th>
             <th>Category</th>
             <th>Description</th>
             <th>Unit Size</th>
+            <th>Expiry Date</th>
         </tr>
     </thead>
     <tbody>
@@ -145,6 +158,7 @@
             <td>{{ product.category.name }}</td>
             <td>{{ product.description }}</td>
             <td>{{ product.unit_size }}</td>
+            <td>{{ product.expiry_date }}</td>
         </tr>
         {% empty %}
         <tr>
@@ -157,22 +171,24 @@
 <!-- Pagination -->
 <div class="pagination">
     {% if page_obj.has_previous %}
-    <a href="?page=1&category_id={{ selected_category_id }}&barcode_query={{ barcode_query }}&name_query={{ name_query }}">First</a>
-    <a href="?page={{ page_obj.previous_page_number }}&category_id={{ selected_category_id }}&barcode_query={{ barcode_query }}&name_query={{ name_query }}">Previous</a>
+    <a href="?page=1&sort={{ sort_column }}&direction={{ sort_direction }}&category_id={{ selected_category_id }}&barcode_query={{ barcode_query }}&name_query={{ name_query }}">First</a>
+    <a href="?page={{ page_obj.previous_page_number }}&sort={{ sort_column }}&direction={{ sort_direction }}&category_id={{ selected_category_id }}&barcode_query={{ barcode_query }}&name_query={{ name_query }}">Previous</a>
     {% endif %}
 
     <span class="current">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
 
     {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number }}&category_id={{ selected_category_id }}&barcode_query={{ barcode_query }}&name_query={{ name_query }}">Next</a>
-    <a href="?page={{ page_obj.paginator.num_pages }}&category_id={{ selected_category_id }}&barcode_query={{ barcode_query }}&name_query={{ name_query }}">Last</a>
+    <a href="?page={{ page_obj.next_page_number }}&sort={{ sort_column }}&direction={{ sort_direction }}&category_id={{ selected_category_id }}&barcode_query={{ barcode_query }}&name_query={{ name_query }}">Next</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}&sort={{ sort_column }}&direction={{ sort_direction }}&category_id={{ selected_category_id }}&barcode_query={{ barcode_query }}&name_query={{ name_query }}">Last</a>
     {% endif %}
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const barcodeInput = document.getElementById('barcode-search'); // Get the barcode input field
+        const nameInput = document.getElementById('name-search'); // Get the name input field
         const form = document.getElementById('barcodeForm'); // Get the form element
+        const searchButton = document.querySelector('.form-container button'); // Get the search button
 
         // Automatically focus on the barcode input field on page load
         barcodeInput.focus();
@@ -180,23 +196,22 @@
         // Clear and refocus the input field on page load
         barcodeInput.value = ''; // Clear the input field when the page loads
 
-        // Listen for the "input" event for real-time updates
+        // Listen for the "input" event for barcode updates
         barcodeInput.addEventListener('input', function () {
-            // Submit the form automatically when input is detected
             if (barcodeInput.value.trim() !== '') {
-                form.submit();
+                form.submit(); // Submit the form automatically
             }
         });
 
-        // Listen for "Enter" key press to submit the form
-        barcodeInput.addEventListener('keypress', function (event) {
+        // Listen for "Enter" key press on the name input to trigger the search button
+        nameInput.addEventListener('keypress', function (event) {
             if (event.key === 'Enter') {
                 event.preventDefault(); // Prevent default form submission
-                form.submit();
+                searchButton.click(); // Trigger the click event on the search button
             }
         });
 
-        // Refocus and clear the input field after form submission
+        // Refocus and clear the barcode input field after form submission
         form.addEventListener('submit', function () {
             setTimeout(function () {
                 barcodeInput.value = ''; // Clear the input field

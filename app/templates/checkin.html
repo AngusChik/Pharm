@@ -32,6 +32,8 @@
        <tr><td><strong>Price:</strong></td><td>{{ product.price }}</td></tr>
        <tr><td><strong>Description:</strong></td><td>{{ product.description }}</td></tr>
        <tr><td><strong>Unit Size:</strong></td><td>{{ product.unit_size }}</td></tr>
+       <tr><td><strong>Product expiry:</strong></td><td>{{ product.expiry_date }}</td></tr>
+
        <tr>
         <td colspan="2" style="text-align: center; padding: 10px;">
             <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
@@ -62,18 +64,15 @@
                         </button>
                     </div>
                 </form>
-        
                 <!-- Edit Product Button -->
                 <a 
                     href="{% url 'edit_product' product.product_id %}?next={{ request.get_full_path }}" 
                     class="btn btn-primary btn-md" 
                     style="padding: 5px 15px; font-size: 14px; text-decoration: none;">
                     Edit
-                </a>
-                
+                </a>   
             </div>
         </td>
-        
     </tr>
     
    </table>
