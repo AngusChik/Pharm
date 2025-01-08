@@ -58,6 +58,17 @@
             {{ form.unit_size }}
         </div>
 
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label for="expiry_date" style="display: block; font-weight: bold;">Expiry Date:</label>
+            <input 
+                type="date" 
+                id="expiry_date" 
+                name="expiry_date" 
+                value="{{ form.expiry_date.value|default:'' }}" 
+                class="form-control" 
+                style="width: 40%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+        </div>
+
         <button type="submit" class="btn btn-success" style="margin-top: 20px; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Save Changes</button>
     </form>
 

@@ -11,7 +11,6 @@
         <option value="1_week" {% if date_filter == '1_week' %}selected{% endif %}>Expiring in 1 Week</option>
         <option value="1_month" {% if date_filter == '1_month' %}selected{% endif %}>Expiring in 1 Month</option>
         <option value="2_months" {% if date_filter == '2_months' %}selected{% endif %}>Expiring in 2 Months</option>
-        <option value="3_months" {% if date_filter == '3_months' %}selected{% endif %}>Expiring in 3 Months</option>
     </select>
 </form>
 
@@ -24,6 +23,7 @@
             <th>Category</th>
             <th>Price</th>
             <th>Quantity</th>
+            <th>Barcode</th>
             <th>Expiry Date</th>
         </tr>
     </thead>
@@ -35,6 +35,7 @@
             <td>{{ product.category.name }}</td>
             <td>{{ product.price }}</td>
             <td>{{ product.quantity_in_stock }}</td>
+            <td>{{ product.barcode }}</td>
             <td>{{ product.expiry_date }}</td>
         </tr>
         {% empty %}

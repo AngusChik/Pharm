@@ -217,31 +217,40 @@ class UpdateOrderItemView(LoginRequiredMixin, View):
 
 
 class SubmitOrderView(LoginRequiredMixin, View):
-   def post(self, request, *args, **kwargs):
-       if 'order_id' in request.session:
-           order = get_object_or_404(Order, order_id=request.session['order_id'])
+    def post(self, request, *args, **kwargs):
+        if 'order_id' in request.session:
+            order = get_object_or_404(Order, order_id=request.session['order_id'])
 
+            # Check if the order has any details
+            if not order.details.exists():
+                messages.error(request, "Cannot submit an empty cart.")
+                return redirect('create_order')
 
-           # Loop through each OrderDetail and update RecentlyPurchasedProduct
-           for detail in order.details.all():
-               recently_purchased, created = RecentlyPurchasedProduct.objects.get_or_create(
-                   product=detail.product
-               )
-               if not created:
-                   recently_purchased.quantity += detail.quantity  # Increment quantity if product already exists
-               else:
-                   recently_purchased.quantity = detail.quantity  # Set quantity if newly created
-               recently_purchased.save()
+            # Loop through each OrderDetail and update RecentlyPurchasedProduct
+            for detail in order.details.all():
+                recently_purchased, created = RecentlyPurchasedProduct.objects.get_or_create(
+                    product=detail.product
+                )
+                if not created:
+                    recently_purchased.quantity += detail.quantity  # Increment quantity if product already exists
+                else:
+                    recently_purchased.quantity = detail.quantity  # Set quantity if newly created
+                recently_purchased.save()
 
+            # Mark the order as submitted and save
+            order.submitted = True
+            order.save()
 
-           # Mark the order as submitted and save
-           order.submitted = True
-           order.save()
-           # Clear the session to start a new order
-           del request.session['order_id']
+            # Clear the session to start a new order
+            del request.session['order_id']
 
+            messages.success(request, "Order submitted successfully.")
+            return redirect('create_order')
 
-           return redirect('create_order')
+        # If no order exists in the session
+        messages.error(request, "No active order found.")
+        return redirect('create_order')
+
 
 
 @login_required
@@ -362,7 +371,7 @@ class AddQuantityView(LoginRequiredMixin, View):
         return render(request, 'checkin.html', {'product': product})
 
 
-# Display all orders
+# Display all orders - Transaction page.
 class OrderView(AdminRequiredMixin, View):
    template_name = 'order_view.html'
 
@@ -497,15 +506,12 @@ class ExpiredProductView(LoginRequiredMixin, View):
             products = products | Product.objects.filter(expiry_date__range=(today, today + timedelta(weeks=4)))
         elif date_filter == '2_months':
             products = products | Product.objects.filter(expiry_date__range=(today, today + timedelta(weeks=8)))
-        elif date_filter == '3_months':
-            products = products | Product.objects.filter(expiry_date__range=(today, today + timedelta(weeks=12)))
 
         # Render the template with the filtered products
         return render(request, self.template_name, {
             'products': products.distinct(),  # Avoid duplicates if a product falls into multiple ranges
             'date_filter': date_filter,
         })
-
 
 
 # Edit an existing product
